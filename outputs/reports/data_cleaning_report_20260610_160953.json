@@ -1,0 +1,19 @@
+{
+  "created_at": "2026-06-10T16:09:53",
+  "initial_rows": 3900,
+  "final_rows": 3900,
+  "removed_row_count": 0,
+  "dropped_columns": [],
+  "actions": [],
+  "plan": {
+    "missing_numeric": "mean",
+    "missing_categorical": "mode",
+    "missing_text": "empty",
+    "duplicates": "drop",
+    "outliers": "keep",
+    "encoding": "onehot",
+    "scaling": "standard",
+    "text": "ignore",
+    "drop_constant_columns": true
+  }
+}

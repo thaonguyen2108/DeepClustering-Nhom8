@@ -1,0 +1,116 @@
+{
+  "dataset": "A:\\DoAn\\DeepClustering\\Project\\DataSet\\customer_shopping_data.csv",
+  "original_rows": 99457,
+  "tested_rows": 5000,
+  "sampled": true,
+  "cleaned_rows": 5000,
+  "feature_columns": [
+    "gender",
+    "age",
+    "category",
+    "quantity",
+    "price",
+    "payment_method",
+    "shopping_mall"
+  ],
+  "metadata_columns": [
+    "invoice_no",
+    "customer_id",
+    "invoice_date"
+  ],
+  "suspicious_high_uniqueness_columns": [
+    "invoice_no"
+  ],
+  "column_role_reasons": {
+    "invoice_no": "Cột dạng chuỗi có tỷ lệ giá trị duy nhất rất cao, có khả năng là mã định danh hoặc metadata.",
+    "customer_id": "Tên cột giống mã định danh, không nên dùng để huấn luyện Autoencoder/KMeans.",
+    "gender": "Có thể dùng làm đặc trưng phân cụm.",
+    "age": "Có thể dùng làm đặc trưng phân cụm.",
+    "category": "Có thể dùng làm đặc trưng phân cụm.",
+    "quantity": "Có thể dùng làm đặc trưng phân cụm.",
+    "price": "Có thể dùng làm đặc trưng phân cụm.",
+    "payment_method": "Có thể dùng làm đặc trưng phân cụm.",
+    "invoice_date": "Cột ngày/giờ dạng thô nên được giữ làm metadata hoặc trích xuất đặc trưng thời gian trước khi huấn luyện.",
+    "shopping_mall": "Có thể dùng làm đặc trưng phân cụm."
+  },
+  "preprocessing_actions": [
+    {
+      "type": "cap_outliers_iqr",
+      "column": "price",
+      "count": 262,
+      "lower": -1686.8549999999998,
+      "upper": 2932.625
+    }
+  ],
+  "removed_rows_path": null,
+  "autoencoder": {
+    "input_dim": 26,
+    "latent_dim": 6,
+    "epochs": 6,
+    "final_loss": 0.1612234349489212,
+    "loss_history": [
+      0.2573941205024719,
+      0.230665669298172,
+      0.20525920693874358,
+      0.1762951146364212,
+      0.16678370776176452,
+      0.1612234349489212
+    ]
+  },
+  "baseline_kmeans_preprocessed": {
+    "best_k": 2,
+    "scores": {
+      "2": {
+        "silhouette": 0.19561605155467987,
+        "davies_bouldin": 1.8543991694515398,
+        "calinski_harabasz": 1004.6402017682442,
+        "inertia": 24126.89453125
+      },
+      "3": {
+        "silhouette": 0.13890574872493744,
+        "davies_bouldin": 2.0964951453668808,
+        "calinski_harabasz": 908.3612994597964,
+        "inertia": 21250.681640625
+      },
+      "4": {
+        "silhouette": 0.13807357847690582,
+        "davies_bouldin": 1.9414027078892135,
+        "calinski_harabasz": 835.4020574057712,
+        "inertia": 19296.6015625
+      },
+      "5": {
+        "silhouette": 0.13891158998012543,
+        "davies_bouldin": 1.9770636684189724,
+        "calinski_harabasz": 755.9212765971946,
+        "inertia": 18050.109375
+      },
+      "6": {
+        "silhouette": 0.13034377992153168,
+        "davies_bouldin": 2.0031859539970793,
+        "calinski_harabasz": 688.0163235403503,
+        "inertia": 17157.6640625
+      },
+      "7": {
+        "silhouette": 0.12381544709205627,
+        "davies_bouldin": 2.111244637319777,
+        "calinski_harabasz": 623.2699364178515,
+        "inertia": 16567.7890625
+      },
+      "8": {
+        "silhouette": 0.11910829693078995,
+        "davies_bouldin": 2.0544659545682618,
+        "calinski_harabasz": 588.1277098773608,
+        "inertia": 15880.21484375
+      }
+    }
+  },
+  "latent_kmeans": {
+    "best_k": 3,
+    "metrics": {
+      "silhouette_score": 0.462464302778244,
+      "davies_bouldin": 0.7468391414275032,
+      "calinski_harabasz": 8099.310783828324
+    }
+  },
+  "cluster_result_path": "outputs\\clustering_results\\customer_segments_20260603_153132.csv"
+}

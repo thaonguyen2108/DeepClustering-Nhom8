@@ -1,0 +1,122 @@
+{
+  "dataset": "A:\\DoAn\\DeepClustering\\Project\\DataSet\\shopping_behavior_updated.csv",
+  "original_rows": 3900,
+  "tested_rows": 3900,
+  "sampled": false,
+  "cleaned_rows": 3900,
+  "feature_columns": [
+    "Age",
+    "Gender",
+    "Item Purchased",
+    "Category",
+    "Purchase Amount (USD)",
+    "Location",
+    "Size",
+    "Color",
+    "Season",
+    "Review Rating",
+    "Subscription Status",
+    "Shipping Type",
+    "Discount Applied",
+    "Promo Code Used",
+    "Previous Purchases",
+    "Payment Method",
+    "Frequency of Purchases"
+  ],
+  "metadata_columns": [
+    "Customer ID"
+  ],
+  "suspicious_high_uniqueness_columns": [],
+  "column_role_reasons": {
+    "Customer ID": "Tên cột giống mã định danh, không nên dùng để huấn luyện Autoencoder/KMeans.",
+    "Age": "Có thể dùng làm đặc trưng phân cụm.",
+    "Gender": "Có thể dùng làm đặc trưng phân cụm.",
+    "Item Purchased": "Có thể dùng làm đặc trưng phân cụm.",
+    "Category": "Có thể dùng làm đặc trưng phân cụm.",
+    "Purchase Amount (USD)": "Có thể dùng làm đặc trưng phân cụm.",
+    "Location": "Có thể dùng làm đặc trưng phân cụm.",
+    "Size": "Có thể dùng làm đặc trưng phân cụm.",
+    "Color": "Có thể dùng làm đặc trưng phân cụm.",
+    "Season": "Có thể dùng làm đặc trưng phân cụm.",
+    "Review Rating": "Có thể dùng làm đặc trưng phân cụm.",
+    "Subscription Status": "Có thể dùng làm đặc trưng phân cụm.",
+    "Shipping Type": "Có thể dùng làm đặc trưng phân cụm.",
+    "Discount Applied": "Có thể dùng làm đặc trưng phân cụm.",
+    "Promo Code Used": "Có thể dùng làm đặc trưng phân cụm.",
+    "Previous Purchases": "Có thể dùng làm đặc trưng phân cụm.",
+    "Payment Method": "Có thể dùng làm đặc trưng phân cụm.",
+    "Frequency of Purchases": "Có thể dùng làm đặc trưng phân cụm."
+  },
+  "preprocessing_actions": [],
+  "removed_rows_path": null,
+  "autoencoder": {
+    "input_dim": 143,
+    "latent_dim": 8,
+    "epochs": 6,
+    "final_loss": 0.07039428218052937,
+    "loss_history": [
+      0.10876191338667503,
+      0.09412888072240047,
+      0.08917684448071016,
+      0.08212824009167842,
+      0.07512067136092064,
+      0.07039428218052937
+    ]
+  },
+  "baseline_kmeans_preprocessed": {
+    "best_k": 2,
+    "scores": {
+      "2": {
+        "silhouette": 0.09738168865442276,
+        "davies_bouldin": 2.9653144927142203,
+        "calinski_harabasz": 432.1101538599984,
+        "inertia": 46820.75
+      },
+      "3": {
+        "silhouette": 0.06511854380369186,
+        "davies_bouldin": 3.4500614143787867,
+        "calinski_harabasz": 298.2807509721794,
+        "inertia": 45106.0859375
+      },
+      "4": {
+        "silhouette": 0.059810858219861984,
+        "davies_bouldin": 3.7966420018007527,
+        "calinski_harabasz": 243.45975362362816,
+        "inertia": 43799.8984375
+      },
+      "5": {
+        "silhouette": 0.0536167211830616,
+        "davies_bouldin": 3.575636190361872,
+        "calinski_harabasz": 210.6723512863401,
+        "inertia": 42759.859375
+      },
+      "6": {
+        "silhouette": 0.05349625647068024,
+        "davies_bouldin": 3.361687008347834,
+        "calinski_harabasz": 188.10989208499407,
+        "inertia": 41892.40625
+      },
+      "7": {
+        "silhouette": 0.05303383618593216,
+        "davies_bouldin": 3.317087599600144,
+        "calinski_harabasz": 171.92317639133805,
+        "inertia": 41116.31640625
+      },
+      "8": {
+        "silhouette": 0.05350688099861145,
+        "davies_bouldin": 3.255535753383782,
+        "calinski_harabasz": 158.97769380489052,
+        "inertia": 40446.1953125
+      }
+    }
+  },
+  "latent_kmeans": {
+    "best_k": 4,
+    "metrics": {
+      "silhouette_score": 0.37417030334472656,
+      "davies_bouldin": 0.927787166696499,
+      "calinski_harabasz": 2936.7749932989063
+    }
+  },
+  "cluster_result_path": "outputs\\clustering_results\\customer_segments_20260603_153012.csv"
+}

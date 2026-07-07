@@ -1,0 +1,331 @@
+[
+  {
+    "dataset": "shopping_behavior_updated.csv",
+    "path": "A:\\DoAn\\DeepClustering\\Project\\DataSet\\shopping_behavior_updated.csv",
+    "read_ok": true,
+    "original_rows": 3900,
+    "tested_rows": 3900,
+    "sampled": false,
+    "columns": 18,
+    "profile": {
+      "missing_cells": 0,
+      "duplicate_rows": 0,
+      "numeric_columns": [
+        "Customer ID",
+        "Age",
+        "Purchase Amount (USD)",
+        "Review Rating",
+        "Previous Purchases"
+      ],
+      "categorical_columns": [
+        "Gender",
+        "Item Purchased",
+        "Category",
+        "Location",
+        "Size",
+        "Color",
+        "Season",
+        "Subscription Status",
+        "Shipping Type",
+        "Discount Applied",
+        "Promo Code Used",
+        "Payment Method",
+        "Frequency of Purchases"
+      ],
+      "text_columns": [],
+      "feature_columns": [
+        "Age",
+        "Gender",
+        "Item Purchased",
+        "Category",
+        "Purchase Amount (USD)",
+        "Location",
+        "Size",
+        "Color",
+        "Season",
+        "Review Rating",
+        "Subscription Status",
+        "Shipping Type",
+        "Discount Applied",
+        "Promo Code Used",
+        "Previous Purchases",
+        "Payment Method",
+        "Frequency of Purchases"
+      ],
+      "metadata_columns": [
+        "Customer ID"
+      ],
+      "suspicious_high_uniqueness_columns": []
+    },
+    "cleaning": {
+      "cleaned_rows": 3900,
+      "removed_rows": 0,
+      "removed_rows_path": null,
+      "cleaning_report_path": "outputs\\reports\\data_cleaning_report_20260603_153120.json",
+      "actions": []
+    },
+    "feature_matrix_shape": [
+      3900,
+      143
+    ],
+    "autoencoder": {
+      "epochs": 6,
+      "input_dim": 143,
+      "latent_dim": 8,
+      "latent_shape": [
+        3900,
+        8
+      ],
+      "final_loss": 0.07039428218052937,
+      "loss_start": 0.10876191338667503,
+      "loss_end": 0.07039428218052937,
+      "loss_decreased": true
+    },
+    "baseline_kmeans_preprocessed": {
+      "best_k": 2,
+      "metrics": {
+        "silhouette": 0.09738168865442276,
+        "davies_bouldin": 2.9653144927142203,
+        "calinski_harabasz": 432.1101538599984,
+        "inertia": 46820.75
+      },
+      "all_scores": {
+        "2": {
+          "silhouette": 0.09738168865442276,
+          "davies_bouldin": 2.9653144927142203,
+          "calinski_harabasz": 432.1101538599984,
+          "inertia": 46820.75
+        },
+        "3": {
+          "silhouette": 0.06511854380369186,
+          "davies_bouldin": 3.4500614143787867,
+          "calinski_harabasz": 298.2807509721794,
+          "inertia": 45106.0859375
+        },
+        "4": {
+          "silhouette": 0.059810858219861984,
+          "davies_bouldin": 3.7966420018007527,
+          "calinski_harabasz": 243.45975362362816,
+          "inertia": 43799.8984375
+        },
+        "5": {
+          "silhouette": 0.0536167211830616,
+          "davies_bouldin": 3.575636190361872,
+          "calinski_harabasz": 210.6723512863401,
+          "inertia": 42759.859375
+        },
+        "6": {
+          "silhouette": 0.05349625647068024,
+          "davies_bouldin": 3.361687008347834,
+          "calinski_harabasz": 188.10989208499407,
+          "inertia": 41892.40625
+        },
+        "7": {
+          "silhouette": 0.05303383618593216,
+          "davies_bouldin": 3.317087599600144,
+          "calinski_harabasz": 171.92317639133805,
+          "inertia": 41116.31640625
+        },
+        "8": {
+          "silhouette": 0.05350688099861145,
+          "davies_bouldin": 3.255535753383782,
+          "calinski_harabasz": 158.97769380489052,
+          "inertia": 40446.1953125
+        }
+      }
+    },
+    "latent_kmeans": {
+      "best_k": 4,
+      "metrics": {
+        "silhouette_score": 0.37417030334472656,
+        "davies_bouldin": 0.927787166696499,
+        "calinski_harabasz": 2936.7749932989063
+      },
+      "all_scores": {
+        "2": 0.36407649517059326,
+        "3": 0.3594067394733429,
+        "4": 0.3708558976650238,
+        "5": 0.3289547562599182,
+        "6": 0.30621427297592163,
+        "7": 0.3227018713951111,
+        "8": 0.3382044732570648
+      },
+      "inertia": {
+        "2": 17508.859375,
+        "3": 12077.37109375,
+        "4": 8803.9140625,
+        "5": 7575.625,
+        "6": 6616.498046875,
+        "7": 5692.77587890625,
+        "8": 5036.41259765625
+      }
+    },
+    "outputs": {
+      "cluster_result_path": "outputs\\clustering_results\\customer_segments_20260603_153128.csv",
+      "final_report_path": "outputs\\reports\\final_report_20260603_153129.json"
+    },
+    "elapsed_seconds": 8.98
+  },
+  {
+    "dataset": "customer_shopping_data.csv",
+    "path": "A:\\DoAn\\DeepClustering\\Project\\DataSet\\customer_shopping_data.csv",
+    "read_ok": true,
+    "original_rows": 99457,
+    "tested_rows": 5000,
+    "sampled": true,
+    "columns": 10,
+    "profile": {
+      "missing_cells": 0,
+      "duplicate_rows": 0,
+      "numeric_columns": [
+        "age",
+        "quantity",
+        "price"
+      ],
+      "categorical_columns": [
+        "gender",
+        "category",
+        "payment_method",
+        "invoice_date",
+        "shopping_mall"
+      ],
+      "text_columns": [
+        "invoice_no",
+        "customer_id"
+      ],
+      "feature_columns": [
+        "gender",
+        "age",
+        "category",
+        "quantity",
+        "price",
+        "payment_method",
+        "shopping_mall"
+      ],
+      "metadata_columns": [
+        "invoice_no",
+        "customer_id",
+        "invoice_date"
+      ],
+      "suspicious_high_uniqueness_columns": [
+        "invoice_no"
+      ]
+    },
+    "cleaning": {
+      "cleaned_rows": 5000,
+      "removed_rows": 0,
+      "removed_rows_path": null,
+      "cleaning_report_path": "outputs\\reports\\data_cleaning_report_20260603_153129.json",
+      "actions": [
+        {
+          "type": "cap_outliers_iqr",
+          "column": "price",
+          "count": 262,
+          "lower": -1686.8549999999998,
+          "upper": 2932.625
+        }
+      ]
+    },
+    "feature_matrix_shape": [
+      5000,
+      26
+    ],
+    "autoencoder": {
+      "epochs": 6,
+      "input_dim": 26,
+      "latent_dim": 6,
+      "latent_shape": [
+        5000,
+        6
+      ],
+      "final_loss": 0.1612234349489212,
+      "loss_start": 0.2573941205024719,
+      "loss_end": 0.1612234349489212,
+      "loss_decreased": true
+    },
+    "baseline_kmeans_preprocessed": {
+      "best_k": 2,
+      "metrics": {
+        "silhouette": 0.19561605155467987,
+        "davies_bouldin": 1.8543991694515398,
+        "calinski_harabasz": 1004.6402017682442,
+        "inertia": 24126.89453125
+      },
+      "all_scores": {
+        "2": {
+          "silhouette": 0.19561605155467987,
+          "davies_bouldin": 1.8543991694515398,
+          "calinski_harabasz": 1004.6402017682442,
+          "inertia": 24126.89453125
+        },
+        "3": {
+          "silhouette": 0.13890574872493744,
+          "davies_bouldin": 2.0964951453668808,
+          "calinski_harabasz": 908.3612994597964,
+          "inertia": 21250.681640625
+        },
+        "4": {
+          "silhouette": 0.13807357847690582,
+          "davies_bouldin": 1.9414027078892135,
+          "calinski_harabasz": 835.4020574057712,
+          "inertia": 19296.6015625
+        },
+        "5": {
+          "silhouette": 0.13891158998012543,
+          "davies_bouldin": 1.9770636684189724,
+          "calinski_harabasz": 755.9212765971946,
+          "inertia": 18050.109375
+        },
+        "6": {
+          "silhouette": 0.13034377992153168,
+          "davies_bouldin": 2.0031859539970793,
+          "calinski_harabasz": 688.0163235403503,
+          "inertia": 17157.6640625
+        },
+        "7": {
+          "silhouette": 0.12381544709205627,
+          "davies_bouldin": 2.111244637319777,
+          "calinski_harabasz": 623.2699364178515,
+          "inertia": 16567.7890625
+        },
+        "8": {
+          "silhouette": 0.11910829693078995,
+          "davies_bouldin": 2.0544659545682618,
+          "calinski_harabasz": 588.1277098773608,
+          "inertia": 15880.21484375
+        }
+      }
+    },
+    "latent_kmeans": {
+      "best_k": 3,
+      "metrics": {
+        "silhouette_score": 0.462464302778244,
+        "davies_bouldin": 0.7468391414275032,
+        "calinski_harabasz": 8099.310783828324
+      },
+      "all_scores": {
+        "2": 0.4767929017543793,
+        "3": 0.4603801667690277,
+        "4": 0.4349493980407715,
+        "5": 0.3919239938259125,
+        "6": 0.3948436975479126,
+        "7": 0.38570886850357056,
+        "8": 0.38222187757492065
+      },
+      "inertia": {
+        "2": 9816.7255859375,
+        "3": 5411.20556640625,
+        "4": 4199.06298828125,
+        "5": 3276.854736328125,
+        "6": 2722.565673828125,
+        "7": 2310.614501953125,
+        "8": 2049.622802734375
+      }
+    },
+    "outputs": {
+      "cluster_result_path": "outputs\\clustering_results\\customer_segments_20260603_153132.csv",
+      "final_report_path": "outputs\\reports\\final_report_20260603_153132.json"
+    },
+    "elapsed_seconds": 3.4
+  }
+]

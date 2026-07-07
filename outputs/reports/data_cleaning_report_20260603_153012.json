@@ -1,0 +1,27 @@
+{
+  "created_at": "2026-06-03T15:30:12",
+  "initial_rows": 5000,
+  "final_rows": 5000,
+  "removed_row_count": 0,
+  "dropped_columns": [],
+  "actions": [
+    {
+      "type": "cap_outliers_iqr",
+      "column": "price",
+      "count": 262,
+      "lower": -1686.8549999999998,
+      "upper": 2932.625
+    }
+  ],
+  "plan": {
+    "missing_numeric": "median",
+    "missing_categorical": "mode",
+    "missing_text": "empty",
+    "duplicates": "drop",
+    "outliers": "cap_iqr",
+    "encoding": "ordinal",
+    "scaling": "robust",
+    "text": "ignore",
+    "drop_constant_columns": true
+  }
+}
